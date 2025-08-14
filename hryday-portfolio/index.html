@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hryday Gupta — Portfolio</title>
+  <meta name="description" content="Portfolio website of Hryday Gupta — developer, learner, and builder of Code Buddy."/>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest"/>
+  <meta property="og:title" content="Hryday Gupta — Portfolio"/>
+  <meta property="og:description" content="Projects, skills, and contact."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="assets/thumb.svg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <style>
+    :root{
+      --bg: #0b1220;
+      --muted:#0f172a;
+      --card:#0f172a;
+      --text:#e5e7eb;
+      --sub:#9ca3af;
+      --brand:#6366f1;
+      --accent:#06b6d4;
+      --ring: 0 0 0 2px color-mix(in srgb, var(--brand) 60%, transparent);
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25), 0 2px 8px rgba(0,0,0,.15);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{
+      position:sticky;top:0;background:linear-gradient(to bottom, rgba(11,18,32,.8), rgba(11,18,32,.6), transparent);
+      backdrop-filter: blur(10px);z-index:10;
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 10px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .brand img{width:34px;height:34px}
+    .links a{padding:8px 12px;border-radius:10px}
+    .links a:hover,.links a:focus{outline:none;box-shadow:var(--ring);}
+    .hero{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin-top:28px;
+    }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero .left{padding:28px}
+    .kicker{color:var(--accent);font-weight:700;letter-spacing:.6px;text-transform:uppercase;font-size:.82rem}
+    h1{font-size:clamp(2.2rem, 3.5vw + 1rem, 3.5rem);line-height:1.1;margin:10px 0 8px}
+    .lead{color:var(--sub);font-size:1.05rem;line-height:1.6;margin-top:6px}
+    .hero .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.1);font-weight:700}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#0b1220}
+    .btn.secondary{background:transparent}
+    .right.card{padding:0;overflow:hidden}
+    .code{
+      background:#0a0f1c;height:100%;display:grid;grid-template-rows:auto 1fr;min-height:300px
+    }
+    .code .tabbar{display:flex;gap:8px;padding:12px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .dot{width:10px;height:10px;border-radius:50%}
+    .dot.r{background:#ef4444}.dot.y{background:#f59e0b}.dot.g{background:#22c55e}
+    pre{margin:0;padding:16px;overflow:auto;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;font-size:.95rem}
+    section{margin-top:42px}
+    h2{font-size:1.6rem;margin:0 0 14px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{display:flex;flex-direction:column;gap:12px;padding:14px}
+    .project img{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+    .tag{font-size:.75rem;color:var(--accent);border:1px solid rgba(255,255,255,.12);padding:4px 8px;border-radius:999px}
+    .stack{display:flex;gap:8px;flex-wrap:wrap}
+    .project .title{font-weight:800;font-size:1.05rem}
+    .project .desc{color:var(--sub);font-size:.95rem}
+    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .skill{padding:14px}
+    .skill .name{font-weight:800}
+    .contact form{display:grid;gap:10px}
+    input, textarea{
+      background:#0a0f1c;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px;color:var(--text);
+    }
+    input:focus, textarea:focus{outline:none;box-shadow:var(--ring)}
+    footer{color:#8b95a7;margin:40px 0 10px;text-align:center}
+    .pill{border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 10px;color:var(--sub);font-size:.85rem}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .skills{grid-template-columns:1fr 1fr}
+    }
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <a class="brand" href="#top">
+          <img src="assets/logo.svg" alt="HG logo" />
+          <span>Hryday Gupta</span>
+        </a>
+        <div class="links row">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="pill">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="left card" aria-labelledby="intro-title">
+        <p class="kicker">Developer • Learner • Builder</p>
+        <h1 id="intro-title">I build learning tools and clean frontends.</h1>
+        <p class="lead">I’m Hryday — currently studying Software Engineering at Thapar University and creating <strong>Code Buddy</strong>, a Duolingo-style platform that helps coders practice daily with tiny, focused challenges.</p>
+        <div class="hero badges row">
+          <span class="pill">Typescript & React</span>
+          <span class="pill">Supabase</span>
+          <span class="pill">C / C++ foundations</span>
+          <span class="pill">Blender basics</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See my work</a>
+          <a class="btn secondary" href="https://github.com/hrydaygupta" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <aside class="right card" aria-label="Live demo code">
+        <div class="code" role="region" aria-label="Code snippet with animation">
+          <div class="tabbar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+<pre><code id="snippet">// micro-interaction: creativity spark
+const spark = () => {
+  const el = document.querySelector('#spark');
+  el.animate([{transform:'scale(.95)'},{transform:'scale(1)'}], {duration: 260, easing: 'ease-out'});
+}
+document.addEventListener('click', spark);
+</code></pre>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Featured Projects</h2>
+      <div class="grid">
+        <article class="project card">
+          <img src="assets/thumb.svg" alt="Code Buddy UI preview placeholder"/>
+          <div class="row stack">
+            <span class="tag">Typescript</span><span class="tag">React</span><span class="tag">Supabase</span>
+          </div>
+          <div class="title">Code Buddy</div>
+          <p class="desc">A habit-forming practice app for coders. Streaks, bite-sized exercises, and spaced repetition. I designed the content model and built auth, progress tracking, and the challenge runner.</p>
+          <div class="row">
+            <a class="btn secondary" href="#" aria-disabled="true">Live demo (coming)</a>
+            <a class="btn primary" href="https://github.com/hrydaygupta" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
+        <article class="project card">
+          <img src="assets/thumb.svg" alt="C/C++ algorithms playground placeholder"/>
+          <div class="row stack">
+            <span class="tag">C</span><span class="tag">C++</span><span class="tag">DSA</span>
+          </div>
+          <div class="title">Algo Notebook</div>
+          <p class="desc">Clean, documented implementations of core data structures and algorithms in C/C++. Focus on clarity over cleverness, with small visual notes on tradeoffs.</p>
+          <div class="row">
+            <a class="btn secondary" href="#" aria-disabled="true">Docs</a>
+            <a class="btn primary" href="https://github.com/hrydaygupta" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
+        <article class="project card">
+          <img src="assets/thumb.svg" alt="Minimal brand and landing page concept placeholder"/>
+          <div class="row stack">
+            <span class="tag">Design</span><span class="tag">HTML/CSS</span><span class="tag">Motion</span>
+          </div>
+          <div class="title">Landing Redesign Concept</div>
+          <p class="desc">A minimal, fast-loading landing page concept with micro-interactions. Built to show taste: spacing, contrast, rhythm, and semantic markup with accessibility first.</p>
+          <div class="row">
+            <a class="btn secondary" href="#" aria-disabled="true">Case study</a>
+            <a class="btn primary" href="#top">Top</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="skills">
+        <div class="skill card">
+          <div class="name">Frontend</div>
+          <p class="desc">HTML5, modern CSS (grid/flex), accessible semantics, responsive layouts, React basics, TypeScript.</p>
+        </div>
+        <div class="skill card">
+          <div class="name">Backend</div>
+          <p class="desc">Supabase (Postgres + Auth), REST thinking, simple serverless functions.</p>
+        </div>
+        <div class="skill card">
+          <div class="name">Foundations</div>
+          <p class="desc">C/C++, algorithmic thinking, problem decomposition, clean code practices.</p>
+        </div>
+        <div class="skill card">
+          <div class="name">Tools</div>
+          <p class="desc">Git & GitHub, VS Code, Blender basics (modelling, materials), Figma for quick wireframes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="card" style="padding:18px">
+        <p>I like building calm, fast experiences. My current focus is <strong>making practice addictive</strong> for programmers through Code Buddy — tiny challenges, instant feedback, and clean UI.</p>
+        <p>Studying Software Engineering at Thapar University. Outside code, I play with Blender to understand 3D thinking, which helps my spatial sense for UI.</p>
+        <div id="spark" class="row" style="margin-top:8px">
+          <span class="pill">Open for internships</span>
+          <span class="pill">Collab on learning tools</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title" class="contact">
+      <h2 id="contact-title">Contact</h2>
+      <div class="card" style="padding:18px">
+        <form name="contact" onsubmit="return sendMessage(event)" aria-describedby="contact-help">
+          <label class="sr-only" for="name">Name</label>
+          <input id="name" name="name" placeholder="Your name" required>
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Your email" required>
+          <label class="sr-only" for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your idea…" required></textarea>
+          <button class="btn primary" type="submit">Send</button>
+          <p id="contact-help" class="lead" style="margin:6px 0 0;font-size:.9rem">This demo just prints to the console for now — replace with your form backend or Netlify Forms.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Hryday Gupta. Built with semantic HTML, modern CSS, and a sprinkle of JS.</p>
+  </footer>
+
+  <script>
+    // tiny enhancements
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function sendMessage(e){
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      console.log('Contact form submission:', data);
+      alert('Thanks! This demo logs your message to the console. Replace with a real endpoint.');
+      e.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
