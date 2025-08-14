@@ -1,24 +1,19 @@
 # Hryday Portfolio
 
-A fast, single-page, no-dependency portfolio that showcases projects, skills, and contact.
+This is my personal portfolio website, designed and built from scratch to showcase my projects, skills, and contact information.  
+The goal was to create a simple, fast, and responsive site with a focus on clean design and clear presentation.
 
-## Quick Start
-1. Open `index.html` locally to preview.
-2. Deploy with **GitHub Pages**:
-   - Create a repo named `hryday-portfolio` (or any name).
-   - Push these files.
-   - In repo settings → Pages → set Source = `main` branch, `/ (root)`.
-   - Your site will be available at `https://<your-username>.github.io/<repo>/`.
-3. Or deploy with **Netlify**:
-   - Drag-and-drop this folder onto https://app.netlify.com/drop
-   - (Optional) enable Netlify Forms using the contact form name `contact`.
+## Features
+- Responsive design for desktop and mobile
+- Projects section with descriptions and visuals
+- About Me section with background and skills
+- Contact form for easy communication
 
-## Customize
-- Replace `assets/thumb.svg` with real screenshots for each project.
-- Update project links in the Projects grid.
-- Edit copy in `index.html` (About, Skills).
-- Colors: tweak CSS variables at the top of the `<style>` block.
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript
 
-## Notes
-- This template is accessible-first (semantic headings, labels, high contrast).
-- No JS frameworks — loads instantly.
+---
+
+© 2025 Hryday Gupta. All rights reserved.
